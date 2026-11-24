@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N Brothers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #fff3e0;
+            overflow: hidden;
+            border: 6px solid #ff5722;
+        }
+        header {
+            background: linear-gradient(90deg, #e65100, #ff6f00);
+            color: white;
+            padding: 10px 8px;
+            text-align: center;
+        }
+        .company-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+        .pentagon-btn {
+            background-color: #ffffff;
+            color: #e65100;
+            border: none;
+            width: 98px;
+            height: 44px;
+            padding-top: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        }
+        .pentagon-btn.active {
+            background-color: #bf360c;
+            color: #ffffff;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: radial-gradient(circle, #ffffff 30%, #ffe0b2 100%);
+        }
+        .ganpati-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+        }
+        .ganpati-box {
+            background: #fff8e1;
+            border: 2px solid #ff6f00;
+            border-radius: 12px;
+            padding: 5px 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ganpati-box svg {
+            width: 32px;
+            height: 32px;
+            fill: #e65100;
+        }
+        .ganpati-mantra {
+            font-size: 11px;
+            font-weight: bold;
+            color: #bf360c;
+        }
+        .page-box {
+            display: none;
+            width: 96%;
+            background: #ffffff;
+            padding: 18px 14px;
+            border-radius: 14px;
+            border: 2px solid #ff6f00;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(230, 81, 0, 0.2);
+            margin: auto 0;
+        }
+        .page-box.active {
+            display: block;
+        }
+        h1 {
+            color: #e65100;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+        h2 {
+            color: #d84315;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .solar-photo {
+            width: 100%;
+            max-width: 280px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ff5722;
+        }
+        ul {
+            list-style: none;
+            text-align: left;
+            font-size: 14px;
+        }
+        ul li {
+            background: #fff3e0;
+            margin: 7px 0;
+            padding: 8px 10px;
+            border-left: 4px solid #ff5722;
+            border-radius: 4px;
+        }
+        footer {
+            background: linear-gradient(90deg, #e65100, #ff6f00);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="company-name">☀️ N Brothers (एन ब्रदर्स)</div>
+        <nav>
+            <button class="pentagon-btn active" onclick="openTab('page1', this)">मुख्य पान</button>
+            <button class="pentagon-btn" onclick="openTab('page2', this)">आमची टीम</button>
+            <button class="pentagon-btn" onclick="openTab('page3', this)">सोलर कामे</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="ganpati-row">
+            <div class="ganpati-box">
+                <svg viewBox="0 0 100 100">
+                    <path d="M50 12 C34 12 26 26 28 42 C17 42 12 54 20 62 C25 67 32 62 34 56 C37 67 44 72 46 80 C47 86 42 90 38 88 C35 86 37 82 40 83 C36 79 30 84 34 91 C39 97 53 94 54 82 C55 72 62 67 66 56 C68 62 75 67 80 62 C88 54 83 42 72 42 C74 26 66 12 50 12 Z"/>
+                </svg>
+                <span class="ganpati-mantra">॥ श्री गणेशाय नमः ॥</span>
+            </div>
+            <div class="ganpati-box">
+                <svg viewBox="0 0 100 100">
+                    <path d="M50 12 C34 12 26 26 28 42 C17 42 12 54 20 62 C25 67 32 62 34 56 C37 67 44 72 46 80 C47 86 42 90 38 88 C35 86 37 82 40 83 C36 79 30 84 34 91 C39 97 53 94 54 82 C55 72 62 67 66 56 C68 62 75 67 80 62 C88 54 83 42 72 42 C74 26 66 12 50 12 Z"/>
+                </svg>
+                <span class="ganpati-mantra">॥ शुभ लाभ ॥</span>
+            </div>
+        </div>
+
+        <div id="page1" class="page-box active">
+            <h1>एन ब्रदर्स (N Brothers)</h1>
+            <p>आम्ही अतिशय उत्तम आणि दर्जेदार <strong>सोलर पॅनेल (Solar Panels)</strong> बसवून देतो.</p>
+            <img src="https://unsplash.com" alt="Solar Panel" class="solar-photo">
+        </div>
+
+        <div id="page2" class="page-box">
+            <h2>आमची माहिती व टीम</h2>
+            <p><strong>N Brothers</strong> ही ग्राहकांना सर्वोत्तम सोलर ऊर्जा सेवा देणारी कंपनी आहे.</p>
+            <ul>
+                <li><strong>कंपनीचे नाव:</strong> एन ब्रदर्स (N Brothers)</li>
+                <li><strong>विशेषता:</strong> अनुभवी टीम आणि उच्च दर्जाचे सोलर पॅनेल फिटिंग</li>
+                <li><strong>फायदा:</strong> वीज बिलात बचत आणि दीर्घकाळ टिकणारी सेवा</li>
+            </ul>
+        </div>
+
+        <div id="page3" class="page-box">
+            <h2>आमच्या सोलर सेवा</h2>
+            <ul>
+                <li>☀️ घरगुती छतावर सोलर पॅनेल बसवून देणे</li>
+                <li>☀️ दुकान व ऑफिससाठी सोलर सिस्टीम</li>
+                <li>☀️ सोलर पॅनेलची देखभाल आणि मार्गदर्शन</li>
+            </ul>
+            <br>
+            <button class="pentagon-btn" onclick="openTab('page1', document.querySelectorAll('nav .pentagon-btn'))">मागे जा</button>
+        </div>
+    </main>
+
+    <footer>
+        ☀️ N Brothers | भव्य ओपनिंग: [तारीख येथे टाका] ☀️
+    </footer>
+
+    <script>
+        function openTab(pageId, btn) {
+            document.querySelectorAll('.page-box').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('nav .pentagon-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            if(btn) btn.classList.add('active');
+        }
+    </script>
+
+</body>
+  </html>
+      
